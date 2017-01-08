@@ -5,12 +5,20 @@
     <title>Hello, Chikenhead! - A-Frame</title>
     <meta name="description" content="Hello, World! - A-Frame">
     <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"></script>
   </head>
   <body>
     <a-scene>
-      <a-box position="-1 1.5 -3" rotation="0 45 0" color="#A153D3"></a-box>
+      <a-box position="-1 1.5 -6" rotation="0 45 0" color="#A153D3"></a-box>
       <a-sphere position="4 1.25 -5" radius="1.25" color="#EF9106"></a-sphere>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#814800"></a-plane>
+      
+      <a-assets>
+        <a-asset-item id="myPlyModel" src="chicken.bake.ply"></a-asset-item>
+      </a-assets>
+      <a-entity ply-model="src: #myPlyModel" position="1 0 -3" scale="0.1 0.1 0.1" rotation="-90 120 0"></a-entity>
+      <a-entity ply-model="src: #myPlyModel" position="-2 0 -5" scale="0.1 0.1 0.1" rotation="-90 40 0"></a-entity>
+      
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="6" height="4" color="#814800"></a-plane>
       <a-sky color="#ECECEC"></a-sky>
     </a-scene>
   </body>
